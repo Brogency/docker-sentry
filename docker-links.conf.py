@@ -112,5 +112,5 @@ if redis:
 else:
     raise Exception('Error: REDIS_PORT_6379_TCP_ADDR (or SENTRY_REDIS_HOST) is undefined, did you forget to `--link` a redis container?')
 
-if SENTRY_URL_PREFIX == 'http://sentry.example.com':
-    del SENTRY_URL_PREFIX
+SENTRY_URL_PREFIX = os.getenv('SENTRY_URL_PREFIX')
+SENTRY_ADMIN_EMAIL = os.getenv('SENTRY_ADMIN_EMAIL')
